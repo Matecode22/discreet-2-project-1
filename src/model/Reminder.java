@@ -12,14 +12,19 @@ public class Reminder extends Event {
         return time;
     }
 
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
     @Override
     public String toString() {
-        return "Reminder{" +
-                "title='" + title + '\'' +
+        return "Reminder ( " +
+                "title = '" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", deadline='" + deadline + '\'' +
-                ", time='" + time + '\'' +
-                '}';
+                ", time='" + time + '\''+")";
+
     }
 }
 

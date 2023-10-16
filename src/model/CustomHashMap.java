@@ -1,6 +1,7 @@
 package model;
 
-public class CustomHashMap<K, V> {
+
+public class CustomHashMap<K, V> implements Cloneable {
 
     private static final int DEFAULT_CAPACITY = 16;
     private static final double LOAD_FACTOR = 0.75;
@@ -117,6 +118,18 @@ public class CustomHashMap<K, V> {
             }
         }
     }
+
+    @Override
+    public CustomHashMap<K, V> clone() {
+        CustomHashMap<K, V> clone = new CustomHashMap<>();
+        CustomLinkedList<K> keys = this.keySet();
+        for (K key : keys) {
+            V event = this.get(key);
+            clone.put(key, event);
+        }
+        return clone;
+    }
+
 
     private static class Entry<K, V> {
         final int hash;

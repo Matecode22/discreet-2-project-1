@@ -28,7 +28,9 @@ public class Main {
             System.out.println("2. Add Reminder");
             System.out.println("3. Show Events");
             System.out.println("4. Remove Event");
-            System.out.println("5. Exit");
+            System.out.println("5. Modify Task / Reminder");
+            System.out.println("6. Undo");
+            System.out.println("7. Exit");
             System.out.print("Enter your choice: ");
 
             choice = scanner.nextInt();
@@ -48,13 +50,19 @@ public class Main {
                     removeEvent();
                     break;
                 case 5:
+                    modify();
+                    break;
+                case 6:
+                    controller.undo();
+                    break;
+                case 7:
                     System.out.println("Exiting the program. Goodbye!");
                     break;
                 default:
                     System.out.println("Invalid choice. Please enter a valid option.");
             }
-        } while (choice != 5);
 
+        } while (choice != 7);
         scanner.close();
     }
 
@@ -71,11 +79,21 @@ public class Main {
         System.out.print("Enter task priority: ");
         int priority = scanner.nextInt();
 
+        System.out.print("Enter task category (1. Prioritaria, 2. No Prioritaria): ");
+        int category = scanner.nextInt();
         scanner.nextLine();
 
-        controller.addTask(title, description, deadline, priority);
+        controller.addTask(title, description, deadline, priority, category);
         System.out.println("Task added successfully!");
     }
+
+    private void modify(){
+        System.out.print("Enter task / Reminder ID: ");
+        Integer id = scanner.nextInt();
+
+        controller.modify(id, scanner);
+    }
+
 
     private void addReminder() {
         System.out.print("Enter reminder title: ");
@@ -101,8 +119,7 @@ public class Main {
 
     private void removeEvent() {
         System.out.print("Enter the ID of the event to remove: ");
-        String eventId = scanner.nextLine();
-
+        Integer eventId = scanner.nextInt();
         if (controller.removeEvent(eventId)) {
             System.out.println("Event removed successfully!");
         } else {

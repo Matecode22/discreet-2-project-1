@@ -23,13 +23,25 @@ public abstract class Event {
         return deadline;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setDeadline(String deadline) {
+        this.deadline = deadline;
+    }
+
     @Override
     public String toString() {
-        return "Event{" +
+        return "Event" +
                 "title='" + title + '\'' +
                 ", description='" + description + '\'' +
-                ", deadline='" + deadline + '\'' +
-                '}';
+                ", deadline='" + deadline + '\'';
+
     }
 }
 
