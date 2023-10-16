@@ -41,6 +41,7 @@ public abstract class Event {
                 "title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", deadline='" + deadline + '\'';
+
     }
 }
 

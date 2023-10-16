@@ -1,5 +1,6 @@
 package model;
 
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -44,7 +45,6 @@ public class Controller {
     public boolean removeEvent(Integer title) {
         countTaskBackup = countTask;
         eventsBackup = events.clone();
-
         Event event = events.remove(title);
         return event != null;
     }
@@ -137,6 +137,8 @@ public class Controller {
             event.setDeadline(deadline);
             ((Reminder) event).setTime(time);
             System.out.println("Reminder updated successfully!");
+
+      
         }
     }
 }

@@ -3,6 +3,7 @@ package model;
 public class Task extends Event {
     private int priority;
 
+
     private int category;
 
     private int id;
@@ -16,6 +17,7 @@ public class Task extends Event {
     public int getPriority() {
         return priority;
     }
+
 
     public int getCategory() {
         return category;
@@ -45,5 +47,6 @@ public class Task extends Event {
                 ", deadline='" + deadline + '\'' +
                 ", category='" + category + '\'' +
                 ", priority=" + priority+" ) ";
+
     }
 }

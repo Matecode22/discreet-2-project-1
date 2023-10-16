@@ -61,8 +61,8 @@ public class Main {
                 default:
                     System.out.println("Invalid choice. Please enter a valid option.");
             }
-        } while (choice != 7);
 
+        } while (choice != 7);
         scanner.close();
     }
 
@@ -94,6 +94,7 @@ public class Main {
         controller.modify(id, scanner);
     }
 
+
     private void addReminder() {
         System.out.print("Enter reminder title: ");
         String title = scanner.nextLine();
@@ -119,7 +120,6 @@ public class Main {
     private void removeEvent() {
         System.out.print("Enter the ID of the event to remove: ");
         Integer eventId = scanner.nextInt();
-
         if (controller.removeEvent(eventId)) {
             System.out.println("Event removed successfully!");
         } else {

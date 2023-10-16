@@ -1,5 +1,6 @@
 package model;
 
+
 public class CustomHashMap<K, V> implements Cloneable {
 
     private static final int DEFAULT_CAPACITY = 16;
@@ -128,6 +129,7 @@ public class CustomHashMap<K, V> implements Cloneable {
         }
         return clone;
     }
+
 
     private static class Entry<K, V> {
         final int hash;

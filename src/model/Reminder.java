@@ -12,6 +12,7 @@ public class Reminder extends Event {
         return time;
     }
 
+
     public void setTime(String time) {
         this.time = time;
     }
@@ -23,6 +24,7 @@ public class Reminder extends Event {
                 ", description='" + description + '\'' +
                 ", deadline='" + deadline + '\'' +
                 ", time='" + time + '\''+")";
+
     }
 }
 
